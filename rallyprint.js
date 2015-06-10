@@ -7,7 +7,17 @@
     $('#rp-print', iframe).click(function (event) {
       event.preventDefault();
 
-      $('#printSection #cards .artifact:not(.rp-keep)', iframe).css('display', 'none');
+      if ($(this).hasClass('filter')) {
+        $('#printSection #cards .artifact:not(.rp-keep)', iframe).css('display', 'none');
+        $(this).html('reset');
+      }
+      else {
+        $('#printSection #cards .artifact:not(.rp-keep)', iframe).css('display', 'block');
+        $('#printSection #cards .artifact', iframe).css('background-color', '#FFF');
+        $(this).html('filter');
+      }
+
+      $(this).toggleClass('filter');
     });
 
     $('#printSection #cards .artifact', this.contentDocument).click(function () {
