@@ -5,7 +5,7 @@
   "content_scripts": [
     {
       "matches": ["https://rally1.rallydev.com/*"],
-      "js": ["jquery.min.js", "rallyprint.js"],
+      "js": ["jquery.min.js", "rallyprint.js"]
     }
   ],
   "manifest_version": 2
